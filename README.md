@@ -31,7 +31,7 @@ advent-of-code
 ├── .gitignore
 ├── create_day.py
 ├── LICENSE
-├── README.md
+└── README.md
 ```
 
 This is what it would look like after running the script for year 2022 day 1:
@@ -56,7 +56,7 @@ advent-of-code
 ├── .gitignore
 ├── create_day.py
 ├── LICENSE
-├── README.md
+└── README.md
 ```
 
 # What do I do with the different files?
