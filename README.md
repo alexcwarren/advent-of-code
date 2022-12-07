@@ -148,9 +148,9 @@ If successful, your output might look like this:
 
 ```bash
 
-test_calorie_counting.py ..                                                                                              [100%]
+test_calorie_counting.py ..                                                        [100%]
 
-====================================================== 2 passed in 0.17s ======================================================
+=================================== 2 passed in 0.17s ===================================
 ```
 
 ### GOOD LUCK!
