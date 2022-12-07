@@ -4,7 +4,7 @@ Automatically create folders and files to work on each Advent of Code puzzle wit
 
 # Getting started
 
-After cloning the repository (or downloading the latest [release](https://github.com/alexcwarren/advent-of-code/releases)), simply run the following in your terminal (Windows/Mac/Linux):
+After forking the repository (or downloading the latest [release](https://github.com/alexcwarren/advent-of-code/releases)), simply run the following in your terminal (Windows/Mac/Linux):
 
 ```bash
 python create_day.py --year 2022 --day 1
