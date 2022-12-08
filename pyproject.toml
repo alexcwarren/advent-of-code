@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "advent-of-code"
+version = "1.2"
+author = "Alex C Warren"
+author_email = "alexcwarren.info@gmail.com"
+url = "https://github.com/alexcwarren/advent-of-code"
+description = "Creat folders and files to work on Advent of Code puzzles."
+readme = "README.md"
+requires-python ">=3.10.5"
+
+[options]
+package_dir=
+    =src
+install_requires =
+    bs4
+    markdownify
+    requests
+    pytest
+
+[options.packages.find]
+where=src
