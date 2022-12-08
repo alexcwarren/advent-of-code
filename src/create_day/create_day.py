@@ -1,3 +1,4 @@
+from ratelimit import limits, RateLimitException
 from argparse import ArgumentParser
 from os import getcwd
 from pathlib import Path
@@ -9,6 +10,7 @@ from requests import get as get_response
 
 from markdown_converter.markdown_converter import MarkdownConverter
 
+REQUEST_TIME_LIMIT_SECS: int = 20
 
 class DayCreator:
     """A class to create all necessary folder and files to work on given an
@@ -40,7 +42,11 @@ class DayCreator:
 
     def create_new_day(self):
         """ "Retrieve Day data and create its directories and files."""
-        self.__download_url_data()
+        try:
+            self.__download_url_data()
+        except RateLimitException as exc:
+            print(exc)
+            exit()
         self.__check_puzzles_directory()
         self.__check_year_directory()
         self.__create_day_directory()
@@ -71,6 +77,7 @@ class DayCreator:
         if "adventofcode.com" not in self.__url:
             parser.error(f'{self.__url}: Please provide "adventofcode.com" URL.')
 
+    @limits(calls=1, period=REQUEST_TIME_LIMIT_SECS)
     def __download_url_data(self):
         """Retrieve HTML content from self.__url."""
         response = get_response(self.__url)

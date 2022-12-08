@@ -16,4 +16,5 @@ dependencies = [
     "markdownify",
     "requests",
     "pytest",
+    "ratelimit"
 ]
