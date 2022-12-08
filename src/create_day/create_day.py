@@ -41,6 +41,7 @@ class DayCreator:
     def create_new_day(self):
         """ "Retrieve Day data and create its directories and files."""
         self.__download_url_data()
+        self.__check_puzzles_directory()
         self.__check_year_directory()
         self.__create_day_directory()
         self.__create_files()
@@ -108,9 +109,15 @@ class DayCreator:
         """Return text in its snakecase form."""
         return text.lower().replace(" ", "_")
 
+    def __check_puzzles_directory(self):
+        """Check that puzzles directory exists - create it if it doesn't."""
+        self.__puzzles_dir: Path = self.__current_dir.parent / "puzzles"
+        if not self.__puzzles_dir.exists():
+            self.__puzzles_dir.mkdir()
+
     def __check_year_directory(self):
         """Check that year directory exists - create it if it doesn't."""
-        self.__year_dir: Path = self.__current_dir / self.__year
+        self.__year_dir: Path = self.__puzzles_dir / self.__year
         if not self.__year_dir.exists():
             self.__year_dir.mkdir()
 
