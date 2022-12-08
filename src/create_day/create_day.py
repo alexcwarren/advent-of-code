@@ -1,4 +1,3 @@
-from ratelimit import limits, RateLimitException
 from argparse import ArgumentParser
 from os import getcwd
 from pathlib import Path
@@ -6,6 +5,7 @@ from re import search, sub
 from shutil import copy
 
 from bs4 import BeautifulSoup
+from ratelimit import RateLimitException, limits
 from requests import get as get_response
 
 from markdown_converter.markdown_converter import MarkdownConverter
@@ -99,7 +99,7 @@ class DayCreator:
         year = search(r".*(\d{4}).*", header.text)
         return year.group(1)
 
-    def __get_problem_header(self) -> tuple[str]:
+    def __get_problem_header(self) -> tuple:
         """Extract problem header info from previously downloaded HTML content."""
         problem_header: str = self.__html_content.find("h2").text.strip()
         day_match = search(r"\d", problem_header)
