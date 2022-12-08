@@ -4,7 +4,13 @@ Automatically create folders and files to work on each Advent of Code puzzle wit
 
 # Getting started
 
-After forking the repository (or downloading the latest [release](https://github.com/alexcwarren/advent-of-code/releases)), simply run the following in your terminal (Windows/Mac/Linux):
+After forking the repository (or downloading the latest [release](https://github.com/alexcwarren/advent-of-code/releases)), simply run the following in your terminal (Windows/Mac/Linux) from inside the `advent-of-code` directory:
+
+```bash
+pip install -e .
+```
+
+Once installed, navigate to the `advent-of-code/src/create_day` directory and run the following to get started (change the year and/or day if you like):
 
 ```bash
 python create_day.py --year 2022 --day 1
@@ -20,17 +26,22 @@ The following is an example of the folder/file hierarchy that would exist before
 
 ```
 advent-of-code
-├── markdown_converter
-│   └── html.txt
-│   └── markdown.md
-│   └── markdown_converter.py
-├── templates
-│   └── Outline.md
-│   └── template.py
-│   └── test.py
+├── src
+|   └── create_day
+|       └── markdown_converter
+|       |   └── __init__.py
+│       |   └── html.txt
+│       |   └── markdown.md
+│       |   └── markdown_converter.py
+|       └── templates
+│       |   └── Outline.md
+│       |   └── template.py
+│       |   └── test.py
+|       └── __init__.py
+|       └── create_day.py
 ├── .gitignore
-├── create_day.py
 ├── LICENSE
+├── pyproject.toml
 └── README.md
 ```
 
@@ -38,24 +49,30 @@ This is what it would look like after running the script for year 2022 day 1:
 
 ```
 advent-of-code
-├── 2022
-│   └── Day 1
-|       └── calorie_counting.py
-|       └── input.in
-|       └── Outline.md
-|       └── sample.in
-|       └── test_calorie_counting.py
-├── markdown_converter
-│   └── html.txt
-│   └── markdown.md
-│   └── markdown_converter.py
-├── templates
-│   └── Outline.md
-│   └── template.py
-│   └── test.py
+├── src
+|   └── create_day
+|   |   └── markdown_converter
+|   |   |   └── __init__.py
+│   |   |   └── html.txt
+│   |   |   └── markdown.md
+│   |   |   └── markdown_converter.py
+|   |   └── templates
+│   |   |   └── Outline.md
+│   |   |   └── template.py
+│   |   |   └── test.py
+|   |   └── __init__.py
+|   |   └── create_day.py
+|   └── puzzles
+|       └── 2022
+│           └── Day 1
+|               └── calorie_counting.py
+|               └── input.in
+|               └── Outline.md
+|               └── sample.in
+|               └── test_calorie_counting.py
 ├── .gitignore
-├── create_day.py
 ├── LICENSE
+├── pyproject.toml
 └── README.md
 ```
 
