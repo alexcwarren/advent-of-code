@@ -10,7 +10,7 @@ author_email = "alexcwarren.info@gmail.com"
 url = "https://github.com/alexcwarren/advent-of-code"
 description = "Creat folders and files to work on Advent of Code puzzles."
 readme = "README.md"
-requires-python = ">=3.10.5"
+requires-python = ">=3.8"
 
 [options]
 package_dir=
