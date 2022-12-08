@@ -5,8 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "advent-of-code"
 version = "1.2"
-author = "Alex C Warren"
-author_email = "alexcwarren.info@gmail.com"
+authors = [
+    {name = "Alex C Warren", email = "alexcwarren.info@gmail.com"}
+]
 url = "https://github.com/alexcwarren/advent-of-code"
 description = "Creat folders and files to work on Advent of Code puzzles."
 readme = "README.md"
