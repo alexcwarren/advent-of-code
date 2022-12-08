@@ -11,13 +11,9 @@ url = "https://github.com/alexcwarren/advent-of-code"
 description = "Creat folders and files to work on Advent of Code puzzles."
 readme = "README.md"
 requires-python = ">=3.8"
-
-[options]
-install_requires =
-    bs4
-    markdownify
-    requests
-    pytest
-
-[options.packages.find]
-where=src
+dependencies = [
+    "bs4",
+    "markdownify",
+    "requests",
+    "pytest",
+]
