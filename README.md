@@ -10,6 +10,12 @@ After forking the repository (or downloading the latest [release](https://github
 pip install -e .
 ```
 
+Try the following if your OS has trouble finding pip:
+
+```python
+python -m pip install -e .
+```
+
 Once installed, navigate to the `advent-of-code/src/create_day` directory and run the following to get started (change the year and/or day if you like):
 
 ```bash
