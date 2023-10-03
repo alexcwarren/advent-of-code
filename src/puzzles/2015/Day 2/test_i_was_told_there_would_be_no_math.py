@@ -9,7 +9,12 @@ def script():
 
 
 def test_sample_input_part1(script):
-    raise NotImplementedError
+    expected_results = [34, 14]
+    actual_results = script.solve_part1()
+    assert len(expected_results) == len(actual_results)
+
+    for expected, actual in zip(expected_results, actual_results):
+        assert expected == actual
 
 
 def test_sample_input_part2(script):
