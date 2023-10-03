@@ -3,6 +3,8 @@ from os import path
 
 
 class NotQuiteLisp:
+    __instruction = {"(": 1, ")": -1}
+
     def __init__(self, filepath: str = None, is_part1: bool = True):
         prog_name: str = "not_quite_lisp.py"
         self.is_part1: bool = is_part1
@@ -41,8 +43,10 @@ class NotQuiteLisp:
         
         results = list()
         for line in input_lines:
-            print(line)
-            results.append(0)
+            floor = 0
+            for character in line:
+                floor += self.__instruction[character]
+            results.append(floor)
         return results
 
     def solve_part2(self):
