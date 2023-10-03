@@ -18,4 +18,9 @@ def test_sample_input_part1(script):
 
 
 def test_sample_input_part2(script):
-    raise NotImplementedError
+    expected_results = [0, 0, 0, 0, 1, 3, 1, 1, 1]
+    actual_results = script.solve_part2()
+    assert len(expected_results) == len(actual_results)
+
+    for expected, actual in zip(actual_results, expected_results):
+        assert expected == actual
