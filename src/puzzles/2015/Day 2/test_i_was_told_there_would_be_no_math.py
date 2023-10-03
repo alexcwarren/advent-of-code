@@ -15,4 +15,6 @@ def test_sample_input_part1(script):
 
 
 def test_sample_input_part2(script):
-    raise NotImplementedError
+    expected_result = 34 + 14
+    actual_result = script.solve_part2()
+    assert expected_result == actual_result
