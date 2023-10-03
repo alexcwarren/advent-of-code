@@ -176,4 +176,25 @@ test_calorie_counting.py ..                                                     
 =================================== 2 passed in 0.17s ===================================
 ```
 
+## How do I get data from input files?
+
+Here are two ways to read data from an input file:
+
+```python
+def solve_part1(self):
+    with open(self.__filepath, 'r') as inputfile:
+        input_lines = inputfile.readlines()
+        input_data = inputfile.read()
+```
+
+- `input_lines` will store a List (i.e. an array) where each element is each line from the input file.
+
+```python
+def solve_part1(self):
+    with open(self.__filepath, 'r') as inputfile:
+        input_data = inputfile.read()
+```
+
+- `input_data` will store the content of the input file in one string.
+
 ### GOOD LUCK!
