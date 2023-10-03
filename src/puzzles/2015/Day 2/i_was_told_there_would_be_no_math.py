@@ -34,12 +34,23 @@ class IWasToldThereWouldBeNoMath:
         else:
             print(f"{self.solve_part2()}")
 
+    @staticmethod
+    def surface_area(width: int, length: int, height: int) -> int:
+        return 2 * (width * length + length * height + height * width)
+
     def solve_part1(self) -> list[int]:
         input_lines: list[str] = list()
-        with open(self.__filepath, 'r') as inputfile:
-            input_lines = inputfile.read().split('\n')
-        print(input_lines)
-        return [0, 0]
+        with open(self.__filepath, "r") as inputfile:
+            input_lines = inputfile.read().split("\n")
+
+        results = list()
+        for line in input_lines:
+            width, length, height = [int(d) for d in line.split("x")]
+            results.append(
+                self.surface_area(width, length, height)
+                + min(width * length, length * height, height * width)
+            )
+        return results
 
     def solve_part2(self):
         raise NotImplementedError
