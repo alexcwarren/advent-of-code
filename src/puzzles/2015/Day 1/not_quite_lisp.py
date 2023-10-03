@@ -50,7 +50,23 @@ class NotQuiteLisp:
         return results
 
     def solve_part2(self):
-        raise NotImplementedError
+        input_lines = list()
+        with open(self.__filepath, 'r') as inputfile:
+            input_lines = inputfile.read().split('\n')
+        
+        results = list()
+        for line in input_lines:
+            floor = 0
+            entered = False
+            for i, character in enumerate(line, 1):
+                floor += self.__instruction[character]
+                if floor < 0:
+                    results.append(i)
+                    entered = True
+                    break
+            else:
+                results.append(0)
+        return results
 
 
 if __name__ == "__main__":
