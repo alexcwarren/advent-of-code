@@ -43,14 +43,11 @@ class IWasToldThereWouldBeNoMath:
         with open(self.__filepath, "r") as inputfile:
             input_lines = inputfile.read().split("\n")
 
-        results = list()
+        result = 0
         for line in input_lines:
             width, length, height = [int(d) for d in line.split("x")]
-            results.append(
-                self.surface_area(width, length, height)
-                + min(width * length, length * height, height * width)
-            )
-        return results
+            result += self.surface_area(width, length, height) + min(width * length, length * height, height * width)
+        return result
 
     def solve_part2(self):
         raise NotImplementedError
