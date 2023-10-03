@@ -35,9 +35,15 @@ class NotQuiteLisp:
             print(f"{self.solve_part2()}")
 
     def solve_part1(self) -> int:
+        input_lines = list()
         with open(self.__filepath, 'r') as inputfile:
-            print(inputfile.readlines())
-        return 0
+            input_lines = inputfile.read().split('\n')
+        
+        results = list()
+        for line in input_lines:
+            print(line)
+            results.append(0)
+        return results
 
     def solve_part2(self):
         raise NotImplementedError
