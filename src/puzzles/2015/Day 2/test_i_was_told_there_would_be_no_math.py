@@ -9,7 +9,7 @@ def script():
 
 
 def test_sample_input_part1(script):
-    expected_results = [34, 14]
+    expected_results = [58, 43]
     actual_results = script.solve_part1()
     assert len(expected_results) == len(actual_results)
 
