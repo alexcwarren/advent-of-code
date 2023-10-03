@@ -34,8 +34,12 @@ class IWasToldThereWouldBeNoMath:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self):
-        raise NotImplementedError
+    def solve_part1(self) -> list[int]:
+        input_lines: list[str] = list()
+        with open(self.__filepath, 'r') as inputfile:
+            input_lines = inputfile.read().split('\n')
+        print(input_lines)
+        return [0, 0]
 
     def solve_part2(self):
         raise NotImplementedError
