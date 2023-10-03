@@ -9,8 +9,8 @@ def script():
 
 
 def test_sample_input_part1(script):
-    pass
+    assert script.solve_part1() == 0
 
 
 def test_sample_input_part2(script):
-    pass
+    raise NotImplementedError
