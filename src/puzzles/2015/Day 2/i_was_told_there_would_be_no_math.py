@@ -46,7 +46,9 @@ class IWasToldThereWouldBeNoMath:
         result = 0
         for line in input_lines:
             width, length, height = [int(d) for d in line.split("x")]
-            result += self.surface_area(width, length, height) + min(width * length, length * height, height * width)
+            result += self.surface_area(width, length, height) + min(
+                width * length, length * height, height * width
+            )
         return result
 
     def solve_part2(self):
