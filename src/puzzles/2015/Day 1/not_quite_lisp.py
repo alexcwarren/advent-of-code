@@ -34,11 +34,13 @@ class NotQuiteLisp:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self):
-        pass
+    def solve_part1(self) -> int:
+        with open(self.__filepath, 'r') as inputfile:
+            print(inputfile.readlines())
+        return 0
 
     def solve_part2(self):
-        pass
+        raise NotImplementedError
 
 
 if __name__ == "__main__":
