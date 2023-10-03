@@ -35,10 +35,10 @@ class IWasToldThereWouldBeNoMath:
             print(f"{self.solve_part2()}")
 
     def solve_part1(self):
-        pass
+        raise NotImplementedError
 
     def solve_part2(self):
-        pass
+        raise NotImplementedError
 
 
 if __name__ == "__main__":
