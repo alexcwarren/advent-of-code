@@ -51,8 +51,24 @@ class IWasToldThereWouldBeNoMath:
             )
         return result
 
+    @staticmethod
+    def volume(width: int, length: int, height: int) -> int:
+        return width * length * height
+
     def solve_part2(self):
-        raise NotImplementedError
+        input_lines: list[str] = list()
+        with open(self.__filepath, "r") as inputfile:
+            input_lines = inputfile.read().split("\n")
+
+        total_result = 0
+        for line in input_lines:
+            result = 0
+            dimensions = [int(d) for d in line.split("x")]
+            result += 2 * sum(dim for dim in dimensions if dim != max(dimensions))
+            width, length, height = dimensions
+            result += self.volume(width, length, height)
+            total_result += result
+        return total_result
 
 
 if __name__ == "__main__":
