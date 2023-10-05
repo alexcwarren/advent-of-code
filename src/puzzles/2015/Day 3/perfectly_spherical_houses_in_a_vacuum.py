@@ -34,8 +34,8 @@ class PerfectlySphericalHousesInAVacuum:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self):
-        raise NotImplementedError
+    def solve_part1(self) -> list[int]:
+        return [0, 0, 0]
 
     def solve_part2(self):
         raise NotImplementedError
