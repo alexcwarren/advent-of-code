@@ -62,11 +62,12 @@ class IWasToldThereWouldBeNoMath:
 
         total_result = 0
         for line in input_lines:
-            result = 0
             dimensions = [int(d) for d in line.split("x")]
-            result += 2 * sum(dim for dim in dimensions if dim != max(dimensions))
+            smallest_two = sorted(dimensions)[:-1]
+            shortest_distance = 2 * sum(smallest_two)
             width, length, height = dimensions
-            result += self.volume(width, length, height)
+            volume = self.volume(width, length, height)
+            result = shortest_distance + volume
             total_result += result
         return total_result
 
