@@ -1,5 +1,7 @@
 from argparse import ArgumentParser
 from os import path
+from hashlib import md5
+from sys import maxsize
 
 
 class TheIdealStockingStuffer:
@@ -34,8 +36,21 @@ class TheIdealStockingStuffer:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self):
-        raise NotImplementedError
+    def solve_part1(self) -> list[int]:
+        inputdata = list()
+        with open(self.__filepath, 'r') as inputfile:
+            inputdata = inputfile.read().split('\n')
+
+        results = list()
+        for secret_key in inputdata:
+            for num in range(0, maxsize):
+                hash = md5(f'{secret_key}{num}'.encode())
+                hexdigest = hash.hexdigest()
+                if hexdigest.startswith('0' * 5):
+                    results.append(num)
+                    break
+
+        return results
 
     def solve_part2(self):
         raise NotImplementedError
