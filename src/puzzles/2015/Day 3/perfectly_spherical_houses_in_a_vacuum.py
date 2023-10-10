@@ -61,8 +61,32 @@ class PerfectlySphericalHousesInAVacuum:
 
         return totals_visited
 
-    def solve_part2(self):
-        raise NotImplementedError
+    def solve_part2(self) -> list[int]:
+        inputdata = list()
+        with open(self.__filepath, 'r') as inputfile:
+            inputdata = inputfile.read().split('\n')
+        print(inputdata)
+
+        totals_visited = list()
+        for directions in inputdata:
+            visited = set()
+            visited.add((0, 0))
+            pos1 = (0, 0)
+            pos2 = (0, 0)
+            positions = [pos1, pos2]
+            curr = 0
+            for direction in directions:
+                curr_pos = positions[curr]
+                movement = self.movements[direction]
+                x_pos = curr_pos[0] + movement[0]
+                y_pos = curr_pos[1] + movement[1]
+                new_pos = (x_pos, y_pos)
+                positions[curr] = new_pos
+                curr = (curr + 1) % 2
+                visited.add(new_pos)
+            totals_visited.append(len(visited))
+        print(totals_visited)
+        return totals_visited
 
 
 if __name__ == "__main__":
