@@ -36,7 +36,7 @@ class TheIdealStockingStuffer:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self) -> list[int]:
+    def solve_part1(self, prefix: str = '0' * 5) -> list[int]:
         inputdata = list()
         with open(self.__filepath, 'r') as inputfile:
             inputdata = inputfile.read().split('\n')
@@ -46,14 +46,14 @@ class TheIdealStockingStuffer:
             for num in range(0, maxsize):
                 hash = md5(f'{secret_key}{num}'.encode())
                 hexdigest = hash.hexdigest()
-                if hexdigest.startswith('0' * 5):
+                if hexdigest.startswith(prefix):
                     results.append(num)
                     break
 
         return results
 
     def solve_part2(self):
-        raise NotImplementedError
+        return self.solve_part1('0' * 6)
 
 
 if __name__ == "__main__":
