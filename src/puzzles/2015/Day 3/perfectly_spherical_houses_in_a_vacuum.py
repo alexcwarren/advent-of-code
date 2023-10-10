@@ -45,25 +45,18 @@ class PerfectlySphericalHousesInAVacuum:
         directions = list()
         with open(self.__filepath, 'r') as inputfile:
             directions_data = inputfile.read().split('\n')
-        print(directions_data)
-        print()
 
         totals_visited = list()
         for directions in directions_data:
-            print(directions)
             visited_coordinates = set()
             pos = (0, 0)
             visited_coordinates.add(pos)
             for direction in directions:
-                print(direction)
                 movement = self.movements[direction]
                 x_pos = pos[0] + movement[0]
                 y_pos = pos[1] + movement[1]
                 pos = (x_pos, y_pos)
-                print(pos)
                 visited_coordinates.add(pos)
-                print(visited_coordinates)
-                print()
             totals_visited.append(len(visited_coordinates))
 
         return totals_visited
