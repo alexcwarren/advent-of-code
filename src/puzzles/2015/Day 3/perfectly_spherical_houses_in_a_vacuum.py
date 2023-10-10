@@ -3,6 +3,13 @@ from os import path
 
 
 class PerfectlySphericalHousesInAVacuum:
+    movements = {
+        '^': (0, 1),
+        '>': (1, 0),
+        '<': (-1, 0),
+        'v': (0, -1)
+    }
+
     def __init__(self, filepath: str = None, is_part1: bool = True):
         prog_name: str = "perfectly_spherical_houses_in_a_vacuum.py"
         self.is_part1: bool = is_part1
@@ -35,7 +42,31 @@ class PerfectlySphericalHousesInAVacuum:
             print(f"{self.solve_part2()}")
 
     def solve_part1(self) -> list[int]:
-        return [0, 0, 0]
+        directions = list()
+        with open(self.__filepath, 'r') as inputfile:
+            directions_data = inputfile.read().split('\n')
+        print(directions_data)
+        print()
+
+        totals_visited = list()
+        for directions in directions_data:
+            print(directions)
+            visited_coordinates = set()
+            pos = (0, 0)
+            visited_coordinates.add(pos)
+            for direction in directions:
+                print(direction)
+                movement = self.movements[direction]
+                x_pos = pos[0] + movement[0]
+                y_pos = pos[1] + movement[1]
+                pos = (x_pos, y_pos)
+                print(pos)
+                visited_coordinates.add(pos)
+                print(visited_coordinates)
+                print()
+            totals_visited.append(len(visited_coordinates))
+
+        return totals_visited
 
     def solve_part2(self):
         raise NotImplementedError
