@@ -65,7 +65,6 @@ class PerfectlySphericalHousesInAVacuum:
         inputdata = list()
         with open(self.__filepath, 'r') as inputfile:
             inputdata = inputfile.read().split('\n')
-        print(inputdata)
 
         totals_visited = list()
         for directions in inputdata:
@@ -85,7 +84,6 @@ class PerfectlySphericalHousesInAVacuum:
                 curr = (curr + 1) % 2
                 visited.add(new_pos)
             totals_visited.append(len(visited))
-        print(totals_visited)
         return totals_visited
 
 
