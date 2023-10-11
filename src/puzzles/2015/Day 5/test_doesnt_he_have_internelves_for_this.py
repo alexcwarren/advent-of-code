@@ -9,9 +9,11 @@ def script():
         "sample.in"
     )
 
+
 @pytest.mark.one
 def test_sample_input_part1(script):
     assert script.solve_part1() == 2
+
 
 @pytest.mark.two
 def test_has_repeating_pairs(script):
@@ -22,6 +24,7 @@ def test_has_repeating_pairs(script):
     assert script.has_repeating_pairs("xxyxx") == True
     assert script.has_repeating_pairs("uurcxstgmygtbstg") == True
     assert script.has_repeating_pairs("ieodomkazucvgmuy") == False
+
 
 @pytest.mark.two
 def test_has_bisected_pair(script):
@@ -34,6 +37,7 @@ def test_has_bisected_pair(script):
     assert script.has_bisected_pair("xxyxx") == True
     assert script.has_bisected_pair("uurcxstgmygtbstg") == True
     assert script.has_bisected_pair("ieodomkazucvgmuy") == True
+
 
 @pytest.mark.two
 def test_sample_input_part2(script):
