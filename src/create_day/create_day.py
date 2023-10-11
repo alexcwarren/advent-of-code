@@ -115,7 +115,7 @@ class DayCreator:
     def __convert_to_filename(self, text: str) -> str:
         """Return text in its snakecase form and without special characters."""
         sanitized_text = text.lower().replace(" ", "_")
-        for ch in "/?<>\\:*|\"":
+        for ch in "-/?<>\\:*|'\"":
             sanitized_text = sanitized_text.replace(ch, "")
         return sanitized_text
 
