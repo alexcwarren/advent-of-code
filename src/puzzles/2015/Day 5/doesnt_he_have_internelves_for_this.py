@@ -35,7 +35,13 @@ class DoesntHeHaveInternelvesForThis:
             print(f"{self.solve_part2()}")
 
     def solve_part1(self):
-        raise NotImplementedError
+        inputdata: list[str] = list()
+        with open(self.__filepath, 'r') as inputfile:
+            inputdata = inputfile.read().split('\n')
+        print(inputdata)
+
+        isnice_results = [False, False, False, False, False]
+        return isnice_results
 
     def solve_part2(self):
         raise NotImplementedError
