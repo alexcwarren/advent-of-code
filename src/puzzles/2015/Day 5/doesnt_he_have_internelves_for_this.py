@@ -34,7 +34,7 @@ class DoesntHeHaveInternelvesForThis:
         else:
             print(f"{self.solve_part2()}")
 
-    def is_nice(self, text: str) -> bool:
+    def is_nice1(self, text: str) -> bool:
         return (
             self.has_3_vowels(text)
             and self.has_repeat(text)
@@ -73,12 +73,20 @@ class DoesntHeHaveInternelvesForThis:
 
         num_isnice = 0
         for string in inputdata:
-            if self.is_nice(string):
+            if self.is_nice1(string):
                 num_isnice += 1
         return num_isnice
 
-    def solve_part2(self):
-        raise NotImplementedError
+    def is_nice2(self, text: str) -> bool:
+        return False
+
+    def solve_part2(self) -> int:
+        inputdata: list[str] = list()
+        with open(self.__filepath, 'r') as inputfile:
+            inputdata = inputfile.read().split('\n')
+        print(inputdata)
+
+        return 0
 
 
 if __name__ == "__main__":
