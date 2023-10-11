@@ -34,14 +34,48 @@ class DoesntHeHaveInternelvesForThis:
         else:
             print(f"{self.solve_part2()}")
 
-    def solve_part1(self):
-        inputdata: list[str] = list()
-        with open(self.__filepath, 'r') as inputfile:
-            inputdata = inputfile.read().split('\n')
-        print(inputdata)
+    def is_nice(self, text: str) -> bool:
+        return (
+            self.has_3_vowels(text)
+            and self.has_repeat(text)
+            and not self.has_forbidden_pairs(text)
+        )
 
-        isnice_results = [False, False, False, False, False]
-        return isnice_results
+    def has_3_vowels(self, text: str) -> bool:
+        return self.has_vowels(text, 3)
+
+    def has_vowels(self, text: str, num_vowels: int = 1) -> bool:
+        vowel_count = 0
+        for ch in text.lower():
+            if ch in "aeiou":
+                vowel_count += 1
+            if vowel_count >= num_vowels:
+                return True
+        return False
+
+    def has_repeat(self, text: str) -> bool:
+        for ch1, ch2 in zip(text[:-1], text[1:]):
+            if ch1 == ch2:
+                return True
+        return False
+
+    def has_forbidden_pairs(self, text: str) -> bool:
+        forbidden_pairs = ["ab", "cd", "pq", "xy"]
+        for pair in forbidden_pairs:
+            if pair in text:
+                return True
+        return False
+
+    def solve_part1(self) -> int:
+        inputdata: list[str] = list()
+        with open(self.__filepath, "r") as inputfile:
+            inputdata = inputfile.read().split("\n")
+
+        num_isnice = 0
+        for string in inputdata:
+            if self.is_nice(string):
+                num_isnice += 1
+        return num_isnice
 
     def solve_part2(self):
         raise NotImplementedError
