@@ -78,15 +78,25 @@ class DoesntHeHaveInternelvesForThis:
         return num_isnice
 
     def is_nice2(self, text: str) -> bool:
+        return self.has_repeating_pairs(text) and self.has_bisected_pair(text)
+    
+    def has_repeating_pairs(self, text: str) -> bool:
+        return False
+
+    def has_bisected_pair(self, text: str) -> bool:
         return False
 
     def solve_part2(self) -> int:
         inputdata: list[str] = list()
         with open(self.__filepath, 'r') as inputfile:
             inputdata = inputfile.read().split('\n')
-        print(inputdata)
 
-        return 0
+        num_nice_strings = 0
+        for string in inputdata:
+            if self.is_nice2(string):
+                num_nice_strings += 1
+
+        return num_nice_strings
 
 
 if __name__ == "__main__":
