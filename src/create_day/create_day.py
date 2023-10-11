@@ -113,8 +113,11 @@ class DayCreator:
         return MarkdownConverter(self.__url).get_markdown(article_html)
 
     def __convert_to_filename(self, text: str) -> str:
-        """Return text in its snakecase form."""
-        return text.lower().replace(" ", "_")
+        """Return text in its snakecase form and without special characters."""
+        sanitized_text = text.lower().replace(" ", "_")
+        for ch in "/?<>\\:*|\"":
+            sanitized_text = sanitized_text.replace(ch, "")
+        return sanitized_text
 
     def __check_puzzles_directory(self):
         """Check that puzzles directory exists - create it if it doesn't."""
