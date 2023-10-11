@@ -9,11 +9,7 @@ def script():
 
 
 def test_sample_input_part1(script):
-    expected_results = [True, True, False, False, False]
-    actual_results = script.solve_part1()
-    assert len(expected_results) == len(actual_results)
-    for expected, actual in zip(expected_results, actual_results):
-        assert expected == actual
+    assert script.solve_part1() == 2
 
 
 def test_sample_input_part2(script):
