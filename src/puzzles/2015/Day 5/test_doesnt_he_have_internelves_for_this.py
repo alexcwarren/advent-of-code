@@ -30,12 +30,12 @@ def test_has_repeating_pairs(script):
 def test_has_bisected_pair(script):
     assert script.has_bisected_pair("abcdefg") == False
     assert script.has_bisected_pair("abccba") == False
-    assert script.has_bisected_pair("xyxy") == True
-    assert script.has_bisected_pair("aabcdefgaa") == True
+    assert script.has_bisected_pair("xyx") == True
+    assert script.has_bisected_pair("abcdefeghi") == True
     assert script.has_bisected_pair("aaa") == True
     assert script.has_bisected_pair("qjhvhtzxzqqjkmpb") == True
     assert script.has_bisected_pair("xxyxx") == True
-    assert script.has_bisected_pair("uurcxstgmygtbstg") == True
+    assert script.has_bisected_pair("uurcxstgmygtbstg") == False
     assert script.has_bisected_pair("ieodomkazucvgmuy") == True
 
 
