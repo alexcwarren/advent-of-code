@@ -9,7 +9,7 @@ def script():
 
 
 def test_sample_input_part1(script):
-    raise NotImplementedError
+    assert script.solve_part1() == 142
 
 
 def test_sample_input_part2(script):
