@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 from os import path
-from re import findall
+# from re import findall
+import re
 
 
 class DoesntHeHaveInternelvesForThis:
@@ -82,16 +83,21 @@ class DoesntHeHaveInternelvesForThis:
         return self.has_repeating_pairs(text) and self.has_bisected_pair(text)
 
     def has_repeating_pairs(self, text: str) -> bool:
-        pairs: list[str] = findall("..", text)
-        for pair in pairs:
-            if text.count(pair) >= 2:
-                return True
-        return False
+        return re.search(r"", text) is not None
+        # pairs: list[str] = findall("..", text)
+        # for pair in pairs:
+        #     if text.count(pair) >= 2:
+        #         print(f"{pair}")
+        #         return True
+        # print(f"No pair repeats")
+        # return False
 
     def has_bisected_pair(self, text: str) -> bool:
         for i in range(len(text) - 2):
             if text[i] == text[i + 2]:
+                print(f"{text[i : i + 3]}")
                 return True
+        print("No bisected pair")
         return False
 
     def solve_part2(self) -> int:
@@ -101,8 +107,11 @@ class DoesntHeHaveInternelvesForThis:
 
         num_nice_strings = 0
         for string in inputdata:
+            print(string)
             if self.is_nice2(string):
                 num_nice_strings += 1
+            print(num_nice_strings)
+            print()
 
         return num_nice_strings
 
