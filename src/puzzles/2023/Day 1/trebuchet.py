@@ -48,8 +48,8 @@ class Trebuchet:
 
         return total_sum_first_last
 
-    def solve_part2(self):
-        raise NotImplementedError
+    def solve_part2(self) -> int:
+        return 0
 
 
 if __name__ == "__main__":
