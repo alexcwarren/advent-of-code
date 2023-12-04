@@ -60,7 +60,7 @@ class DayCreator:
             usage="python create_day.py [-y <year> -d <day>] [--url <AdventOfCode.com URL>]",
         )
         parser.add_argument(
-            "-y", "--year", choices=[str(yr) for yr in range(2015, 2023)]
+            "-y", "--year", choices=[str(yr) for yr in range(2015, 2024)]
         )
         parser.add_argument("-d", "--day", choices=[str(dy) for dy in range(1, 26)])
         parser.add_argument("-u", "--url", default=BASE_URL)
