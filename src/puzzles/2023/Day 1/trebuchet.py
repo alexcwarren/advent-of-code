@@ -49,7 +49,31 @@ class Trebuchet:
         return total_sum_first_last
 
     def solve_part2(self) -> int:
-        return 0
+        lines: list[str] = []
+        with open(self.__filepath) as inputfile:
+            lines = inputfile.read().lower().split()
+
+        numbers: dict[str,int] = {
+            "one": 1,
+            "two": 2,
+            "three": 3,
+            "four": 4,
+            "five": 5,
+            "six": 6,
+            "seven": 7,
+            "eight": 8,
+            "nine": 9
+        }
+
+        from re import findall
+        total_sum_first_last: int = 0
+        for line in lines:
+            print(line)
+            digits = findall(r'\d', line)
+            print(digits)
+            print()
+
+        return total_sum_first_last
 
 
 if __name__ == "__main__":
