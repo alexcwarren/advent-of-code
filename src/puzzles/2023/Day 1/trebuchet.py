@@ -35,7 +35,18 @@ class Trebuchet:
             print(f"{self.solve_part2()}")
 
     def solve_part1(self) -> int:
-        return 0
+        lines: list[str]
+        with open(self.__filepath) as inputfile:
+            lines = inputfile.read().split()
+
+        total_sum_first_last: int = 0
+        for line in lines:
+            from re import findall
+            digits = findall(r'\d', line)
+            sum_first_last = int(digits[0] + digits[-1])
+            total_sum_first_last += sum_first_last
+
+        return total_sum_first_last
 
     def solve_part2(self):
         raise NotImplementedError
