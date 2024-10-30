@@ -18,3 +18,9 @@ dependencies = [
     "pytest",
     "ratelimit"
 ]
+
+[tool.flake8]
+max-line-length = 89
+
+[tool.black]
+line-length = 89
