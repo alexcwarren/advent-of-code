@@ -3,12 +3,12 @@ from os import path
 
 
 class CubeConundrum:
-    def __init__(self, filepath: str = None, is_part1: bool = True):
+    def __init__(self, filepath: str = "", is_part1: bool = True):
         prog_name: str = "cube_conundrum.py"
         self.is_part1: bool = is_part1
 
         # Look for command-line args if no filepath provided
-        if filepath is None:
+        if not filepath:
             parser = ArgumentParser(
                 prog=prog_name,
                 usage=f"python {prog_name} -f <filepath> -p <partnumber>",
@@ -19,7 +19,7 @@ class CubeConundrum:
             filepath = args.filepath
             self.is_part1 = args.partnumber == "1"
 
-        if filepath is None:
+        if not filepath:
             print("ERROR: filepath not provided.")
             exit()
         elif not path.isfile(filepath):
